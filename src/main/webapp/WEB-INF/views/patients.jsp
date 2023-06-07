@@ -21,5 +21,12 @@
       Téléphone : ${patient.getTel_patient()}
     </div>
   </c:forEach>
+</br>
+  </br>
+  <form>
+    <div><label>Rechercher par nom</label><input type="text" name="search_nom"/></div>
+    <div><button type="submit" >Valider</button></div>
+  </form>
+
 </body>
 </html>

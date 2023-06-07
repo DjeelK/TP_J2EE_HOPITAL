@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Patient ${patient.getId}</title>
+    <title>Patient ${patient.getId_patient()}</title>
 </head>
 <body>
 <div>
