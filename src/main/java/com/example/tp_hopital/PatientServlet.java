@@ -32,16 +32,21 @@ public class PatientServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String searchByName = request.getParameter("searchByName");
+
         if (request.getParameter("id") != null) {
             int id = Integer.parseInt((request.getParameter("id")));
             entities.Patient patient = service.findById(id);
+            request.setAttribute("patient", patient);
+            request.getRequestDispatcher(Definition.VIEW_PATH + "patient.jsp").forward(request, response);
+        } else if(searchByName != null) {
+            entities.Patient patient = service.findByNom(searchByName);
             request.setAttribute("patient", patient);
             request.getRequestDispatcher(Definition.VIEW_PATH + "patient.jsp").forward(request, response);
         } else {
             request.setAttribute("patients", service.findAll());
             request.getRequestDispatcher(Definition.VIEW_PATH + "patients.jsp").forward(request, response);
         }
-
     }
 }
 

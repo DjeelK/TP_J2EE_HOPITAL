@@ -39,4 +39,16 @@ public class PatientService extends BaseService implements Repository<Patient> {
         session.close();
         return patientList;
     }
-}
+
+    @Override
+    public Patient findByNom(String nom_patient) {
+            Patient patient = null;
+            session = sessionFactory.openSession();
+            Query<Patient> query = session.createQuery("from Patient where nom_patient = :nom_patient");
+            query.setParameter("nom_patient",nom_patient);
+            patient = query.uniqueResult();
+            session.close();
+            return patient;
+        }
+    }
+

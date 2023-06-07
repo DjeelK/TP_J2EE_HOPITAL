@@ -12,18 +12,20 @@
   <title>Consultations</title>
 </head>
 <body>
-<h2>Liste des consultations</h2>
+<h1>Liste des consultations</h1>
 <c:forEach items="${consultations}" var="consultation">
   <div>
     Titre consultation : ${consultation.getNom_consultation()}
-    Prescription : ${consultation.getPrescriptio()}
+    Prescription : ${consultation.getPrescription()}
     Fiche de soin : ${consultation.getFicheDeSoin()}
   </div>
 </c:forEach>
 <h1>Création consultation</h1>
-<form>
+<form method="post">
   <div><label>Titre de la consultation :</label><input type="text" name="nom_consultation"/></div>
   <div><label>Médicament :</label><input type="text" name="medicament_prescription"/></div>
+  <div><label>Fiche de soin</label><textarea></textarea></div>
+  <div><button type="submit" >Valider</button></div>
 </form>
 </body>
 </html>

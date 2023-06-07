@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Consultation ${consulation.getId_consultation}</title>
 </head>
 <body>
-
+<div>
+    Titre consultation : ${consultation.getNom_consultation()}
+    Prescription : ${consultation.getPrescription()}
+    Fiche de soin : ${consultation.getFicheDeSoin()}
+</div>
 </body>
 </html>

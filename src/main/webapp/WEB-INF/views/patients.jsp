@@ -17,14 +17,13 @@
     <div>
       Nom : ${patient.getNom_patient()}
       Prenom : ${patient.getPrenom_patient()}
-      Mail : ${patient.getMail_patient()}
-      Téléphone : ${patient.getTel_patient()}
+      <a href = "patients?id=${patient.getId_patient()}">Dossier médical</a>
     </div>
   </c:forEach>
 </br>
   </br>
-  <form>
-    <div><label>Rechercher par nom</label><input type="text" name="search_nom"/></div>
+  <form action ="patients" method="get">
+    <div><label>Rechercher par nom</label><input type="text" name="searchByName"/></div>
     <div><button type="submit" >Valider</button></div>
   </form>
 

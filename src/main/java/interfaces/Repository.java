@@ -5,4 +5,5 @@ public interface Repository<T> {
     boolean create(T o);
     T findById(int id);
     List<T> findAll();
+    T findByNom(String nom_patient);
 }

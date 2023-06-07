@@ -36,6 +36,7 @@ public class Consultation {
         this.dossierMedical = dossierMedical;
     }
 
+
     public int getId_consultation() {
         return id_consultation;
     }
